@@ -28,6 +28,7 @@ class ExcelTool():
                 self.wb.sheets.add('sheet' + str(sheet_name+1))
         elif isinstance(sheet_name, str):
             hasSheet = False
+            print(len(self.wb.sheets))
             for sht in self.wb.sheets:
                 if sht.name == sheet_name:
                     hasSheet = True
@@ -71,4 +72,6 @@ if __name__ == '__main__':
     excel_tool.write_line_in_sheet('def', ['333', '333'], 1)
     excel_tool.write_line_in_sheet('abc', ['aaa'], 2)
     excel_tool.write_line_in_sheet('def', ['bbb'], 2)
+    excel_tool.enter_sheet('sheet1')
+    excel_tool.cur_sht.delete
     excel_tool.save_and_close()

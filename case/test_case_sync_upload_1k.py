@@ -1,13 +1,14 @@
 import unittest
 from case.base_test_case import TestCaseBase # .之前没有case，单独运行此case会报错，暂不知原因
-from pages.desktop import Desktop
+from pages.tray import Tray
+from manager.sync_manager import SyncManager
 
 class TestCase(TestCaseBase):
-    testCaseID = 1001
+    testCaseID = '1k'
 
     def test_run(self):
-        Desktop.click_shortcut()
-        # Tray.click_tray_icon(right_click=True)
+        SyncManager.cur_sync_web_folder = TestCase.testCaseID
+        SyncManager.create_sync_local_to_cloud()
 
 
 
@@ -16,4 +17,5 @@ class TestCase(TestCaseBase):
 
 
 if __name__ == "__main__":
-    print('a')
+    # print(TestCaseBase.testCaseID)
+    unittest.main()

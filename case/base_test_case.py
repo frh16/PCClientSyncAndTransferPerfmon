@@ -10,7 +10,7 @@ from common.utils.file import *
 
 class TestCaseBase(unittest.TestCase):
 
-    testCaseID = 12345679
+    testCaseID = ''
 
     @classmethod
     def setUp(cls):

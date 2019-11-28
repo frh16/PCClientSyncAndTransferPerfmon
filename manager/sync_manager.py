@@ -51,9 +51,9 @@ class SyncManager():
         SyncSetting.click_btn_ok()
         CreateSyncBox.click_btn_ok('white')
 
-        SyncManager.start_check_sync_start()
-
         close_window_by_class_name(WinClassName.SYNC_LOCAL_PATH_NOTICE)
+
+        SyncManager.start_check_sync_start()
 
 
     @staticmethod
@@ -97,7 +97,9 @@ class SyncManager():
     @staticmethod
     def start_check_sync_start():
         SyncManager.start_sync_time = time.time()
-        threading.Thread(target=SyncManager.check_sync_start).start()
+        cur_thread = threading.Thread(target=SyncManager.check_sync_start)
+        cur_thread.start()
+        cur_thread.join()
 
     @staticmethod
     def check_sync_start(timeout=10):
@@ -115,7 +117,6 @@ class SyncManager():
                 # start perfmon
                 SyncManager.start_monitor()
                 SyncManager.start_check_sync_end()
-                threading.Thread(target=SyncManager.my_thread).start()
                 break
             if used_time > timeout:
                 print('check_sync_start time out')
@@ -124,7 +125,7 @@ class SyncManager():
             time.sleep(0.1)
 
     @staticmethod
-    def my_thread():
+    def monitor_and_record():
         excel_tool = ExcelTool.getInstance()
         excel_tool.create_excel('test.xlsx')
         excel_tool.write_line_in_sheet('record', ['同步开始所用时间', SyncManager.sync_start_used_time], 1)
@@ -172,6 +173,9 @@ class SyncManager():
         SyncManager.cur_upload_num = 0
         SyncManager.is_sync_finish = False
 
+        cur_thread = threading.Thread(target=SyncManager.monitor_and_record)
+        cur_thread.start()
+
     @staticmethod
     def check_sync_fail_num():
         SyncManager.record_transfer_fail_times += 1
@@ -199,33 +203,54 @@ class SyncManager():
         SyncManager.cur_upload_num = 0
         SyncManager.is_sync_finish = False
 
+        SyncManager.refresh_web_select_folder()
+
+        cur_thread = threading.Thread(target=SyncManager.check_cur_upload_num)
+        cur_thread.start()
+        cur_thread.join()
+
+    @staticmethod
+    def refresh_web_select_folder():
         webutils = WebUtils.getInstance()
         webutils.refresh()
-        sleep(2)
-        webutils.click(['xpath', "//a[text()=" + "\'" + SyncManager.cur_sync_web_folder + "\'" +"]/../../../preceding-sibling::span"])
-        threading.Thread(target=SyncManager.check_cur_upload_num).start()
-
+        target_element_xpath = "//a[text()=" + "\'" + SyncManager.cur_sync_web_folder + "\'" + "]/../../../preceding-sibling::span"
+        webutils.wait_element(['xpath', target_element_xpath], 60)
+        webutils.click(['xpath', target_element_xpath])
 
     @staticmethod
     def check_cur_upload_num():
         webutils = WebUtils.getInstance()
+
+        arrow_down_css = '.icon.i-arrow2'
+        arrow_up_css = '.icon.i-arrow4'
+
+        # arrow_xpath = '//*[@id="file-attr-wraper"]/div/div[2]/div/div[2]/div[1]/p[6]/a/i'
+        target_text_xpath = '//*[@id="file-attr-wraper"]/div/div[2]/div/div[2]/div[1]/div/p[2]/span[2]'
         while True:
             sleep(5)
-            arrow = webutils.find_element(['xpath', '//*[@id="file-attr-wraper"]/div/div[2]/div/div[2]/div[1]/p[6]/a/i'])
-            arrow.click()
-            webutils.wait_element(['xpath', '//*[@id="file-attr-wraper"]/div/div[2]/div/div[2]/div[1]/div/p[2]/span[2]'], 10)
-            element_num = webutils.find_element(['xpath', '//*[@id="file-attr-wraper"]/div/div[2]/div/div[2]/div[1]/div/p[2]/span[2]'])
-            if element_num:
-                str_num = element_num.text
-                if str_num.find('个文件') > 0:
-                    index = str_num.index('个文件')
-                    if index > 0:
-                        SyncManager.cur_upload_num = int(str_num[0:index])
-                        print('SyncManager.cur_upload_num===>'+str(SyncManager.cur_upload_num))
+            try:
+                webutils.wait_element(['css', arrow_down_css], 60)
+                arrow_down = webutils.find_element(['css', arrow_down_css])
+                arrow_down.click()
+                webutils.wait_element(['xpath', target_text_xpath], 60)
+                element_num = webutils.find_element(['xpath', target_text_xpath])
+                if element_num:
+                    str_num = element_num.text
+                    if str_num.find('个文件') > 0:
+                        index = str_num.index('个文件')
+                        if index > 0:
+                            SyncManager.cur_upload_num = int(str_num[0:index])
+                            print('SyncManager.cur_upload_num===>' + str(SyncManager.cur_upload_num))
 
-            arrow.click()
+                arrow_up = webutils.find_element(['css', arrow_up_css])
+                arrow_up.click()
+            except Exception as e:
+                print('exception in check_cur_upload_num: ', e)
+                SyncManager.refresh_web_select_folder()
 
-            if SyncManager.cur_upload_num + SyncManager.cur_transfer_fail_num == SyncManager.get_total_upload_num():
+
+            # >= because 'desktop.ini'
+            if SyncManager.cur_upload_num + SyncManager.cur_transfer_fail_num >= SyncManager.get_total_upload_num():
                 SyncManager.sync_finish_used_time = time.time() - SyncManager.start_sync_time
                 print('sync_complete_used_time===>' + str(SyncManager.sync_finish_used_time))
 
@@ -238,8 +263,12 @@ class SyncManager():
     def get_total_upload_num():
         if SyncManager.cur_sync_web_folder == '1k':
             return 1000
-        elif SyncManager.cur_sync_web_folder == '0.1k':
-            return 100
+        elif SyncManager.cur_sync_web_folder == '10k':
+            return 10000
+        elif SyncManager.cur_sync_web_folder == '100k':
+            return 100000
+        elif SyncManager.cur_sync_web_folder == '1m':
+            return 1000000
         else:
             return -1
 
@@ -273,7 +302,8 @@ if __name__ == '__main__':
     auto_setup(__file__, devices=[
         "Windows:///",
     ])
-    # SyncManager.delete_web_folder()
     SyncManager.create_sync_local_to_cloud()
-    # SyncManager.start_perfmon()
-    # threading.Thread(target=SyncManager.my_thread).start()
+    # SyncManager.start_monitor()
+    # cur_thread = threading.Thread(target=SyncManager.my_thread)
+    # cur_thread.start()
+    # cur_thread.join()
