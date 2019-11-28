@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b46e9cf-45bf-4b4f-b4d3-b2d2d459f1b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/base_test_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/base_test_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/test_case_111.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/test_case_222.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/case/test_case_sync_upload_1k.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/test_case_sync_upload_1k.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/utils/excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191018113254/111/1571369575562.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191018113254/111/1571369575562_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191018113254/111/fake.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191018113254/111/log.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191018113254/111/log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191018113254/222/fake.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191018113254/222/log.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191018113254/222/log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/result_20191018113254.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/utils/file.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/file.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager/sync_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/sync_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,7 +59,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../workspace/PycharmProjects/test" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -98,7 +87,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.excel">
+  <component name="RunManager" selected="Python.run">
     <configuration name="excel" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -199,10 +188,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.excel" />
-        <item itemvalue="Python.excel" />
-        <item itemvalue="Python.excel" />
-        <item itemvalue="Python.sync_manager" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.run" />
         <item itemvalue="Python.sync_manager" />
       </list>
     </recent_temporary>
@@ -250,7 +239,7 @@
       <workItem from="1574906784303" duration="362000" />
       <workItem from="1574908497891" duration="79000" />
       <workItem from="1574909443415" duration="982000" />
-      <workItem from="1574912153623" duration="13132000" />
+      <workItem from="1574912153623" duration="19781000" />
     </task>
     <servers />
   </component>

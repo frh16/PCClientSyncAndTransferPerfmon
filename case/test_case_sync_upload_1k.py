@@ -7,7 +7,7 @@ class TestCase(TestCaseBase):
     testCaseID = '1k'
 
     def test_run(self):
-        SyncManager.cur_sync_web_folder = TestCase.testCaseID
+        SyncManager.set_case_id(TestCase.testCaseID)
         SyncManager.create_sync_local_to_cloud()
 
 

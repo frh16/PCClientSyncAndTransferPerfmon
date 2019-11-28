@@ -24,6 +24,7 @@ import pythoncom
 
 class SyncManager():
 
+    cur_case_id = ''
     cur_sync_web_folder = '0.1k'
     cur_transfer_fail_num = 0
     cur_upload_num = 0
@@ -38,12 +39,19 @@ class SyncManager():
     sync_start_used_time = 0
     sync_finish_used_time = 0
 
+    thread_list = []
+
+    @staticmethod
+    def set_case_id(case_id):
+        SyncManager.cur_case_id = case_id
+        SyncManager.cur_sync_web_folder = SyncManager.cur_case_id
+
     @staticmethod
     def create_sync_local_to_cloud():
         SyncManager.login()
         SyncManager.sync_local_folder()
 
-        SelectLocalFolderSyncToCloud.click_folder_100()
+        SyncManager.click_upload_folder_by_case()
         SelectLocalFolderSyncToCloud.click_btn_sync_to_box()
         CreateSyncBox.click_folder_my_space()
         CreateSyncBox.click_advance_setting()
@@ -55,6 +63,14 @@ class SyncManager():
 
         SyncManager.start_check_sync_start()
 
+    @staticmethod
+    def click_upload_folder_by_case():
+        if SyncManager.cur_sync_web_folder == '0.1k':
+            SelectLocalFolderSyncToCloud.click_folder_100()
+        elif SyncManager.cur_sync_web_folder == '1k':
+            SelectLocalFolderSyncToCloud.click_folder_1k()
+        elif SyncManager.cur_sync_web_folder == '10k':
+            SelectLocalFolderSyncToCloud.click_folder_1k()
 
     @staticmethod
     def create_sync_cloud_to_local():
@@ -126,9 +142,16 @@ class SyncManager():
 
     @staticmethod
     def monitor_and_record():
+
+        log_dir = os.path.join(Config.get_log_dir(), str(SyncManager.cur_case_id))
+        mkdir(log_dir)
+        save_path = os.path.join(log_dir, 'monitor.xlsx')
+
         excel_tool = ExcelTool.getInstance()
-        excel_tool.create_excel('test.xlsx')
+        excel_tool.create_excel(save_path)
         excel_tool.write_line_in_sheet('record', ['同步开始所用时间', SyncManager.sync_start_used_time], 1)
+
+        excel_tool.save_and_close()
 
         perfmon = Perfmon.getInstance()
         perfmon.init_control()
@@ -175,6 +198,7 @@ class SyncManager():
 
         cur_thread = threading.Thread(target=SyncManager.monitor_and_record)
         cur_thread.start()
+        SyncManager.thread_list.append(cur_thread)
 
     @staticmethod
     def check_sync_fail_num():
@@ -207,7 +231,7 @@ class SyncManager():
 
         cur_thread = threading.Thread(target=SyncManager.check_cur_upload_num)
         cur_thread.start()
-        cur_thread.join()
+        SyncManager.thread_list.append(cur_thread)
 
     @staticmethod
     def refresh_web_select_folder():
@@ -304,6 +328,3 @@ if __name__ == '__main__':
     ])
     SyncManager.create_sync_local_to_cloud()
     # SyncManager.start_monitor()
-    # cur_thread = threading.Thread(target=SyncManager.my_thread)
-    # cur_thread.start()
-    # cur_thread.join()

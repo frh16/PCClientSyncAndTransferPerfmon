@@ -22,12 +22,24 @@ class SelectLocalFolderSyncToCloud(BasePage):
         cls.touch('folder_upload.png', is_common_img=True)
 
     @classmethod
+    def click_folder_100(cls):
+        cls.touch('folder_100.png', is_common_img=True)
+
+    @classmethod
     def click_folder_1k(cls):
         cls.touch('folder_1k.png', is_common_img=True)
 
     @classmethod
-    def click_folder_100(cls):
-        cls.touch('folder_100.png', is_common_img=True)
+    def click_folder_10k(cls):
+        cls.touch('folder_10k.png', is_common_img=True)
+
+    @classmethod
+    def click_folder_100k(cls):
+        cls.touch('folder_100k.png', is_common_img=True)
+
+    @classmethod
+    def click_folder_1m(cls):
+        cls.touch('folder_1m.png', is_common_img=True)
 
     @classmethod
     def click_btn_sync_to_box(cls):
