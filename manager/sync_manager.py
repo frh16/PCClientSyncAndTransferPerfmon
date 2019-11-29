@@ -39,7 +39,8 @@ class SyncManager():
     sync_start_used_time = 0
     sync_finish_used_time = 0
 
-    thread_list = []
+    thread_monitor = None
+    thread_check_sync_end = None
 
     @staticmethod
     def set_case_id(case_id):
@@ -62,6 +63,11 @@ class SyncManager():
         close_window_by_class_name(WinClassName.SYNC_LOCAL_PATH_NOTICE)
 
         SyncManager.start_check_sync_start()
+
+        if isinstance(SyncManager.thread_monitor, threading.Thread):
+            SyncManager.thread_monitor.join()
+
+        SyncManager.release()
 
     @staticmethod
     def click_upload_folder_by_case():
@@ -151,8 +157,6 @@ class SyncManager():
         excel_tool.create_excel(save_path)
         excel_tool.write_line_in_sheet('record', ['同步开始所用时间', SyncManager.sync_start_used_time], 1)
 
-        excel_tool.save_and_close()
-
         perfmon = Perfmon.getInstance()
         perfmon.init_control()
 
@@ -196,9 +200,8 @@ class SyncManager():
         SyncManager.cur_upload_num = 0
         SyncManager.is_sync_finish = False
 
-        cur_thread = threading.Thread(target=SyncManager.monitor_and_record)
-        cur_thread.start()
-        SyncManager.thread_list.append(cur_thread)
+        SyncManager.thread_monitor = threading.Thread(target=SyncManager.monitor_and_record)
+        SyncManager.thread_monitor.start()
 
     @staticmethod
     def check_sync_fail_num():
@@ -229,9 +232,8 @@ class SyncManager():
 
         SyncManager.refresh_web_select_folder()
 
-        cur_thread = threading.Thread(target=SyncManager.check_cur_upload_num)
-        cur_thread.start()
-        SyncManager.thread_list.append(cur_thread)
+        SyncManager.thread_check_sync_end = threading.Thread(target=SyncManager.check_cur_upload_num)
+        SyncManager.thread_check_sync_end.start()
 
     @staticmethod
     def refresh_web_select_folder():
@@ -277,9 +279,7 @@ class SyncManager():
             if SyncManager.cur_upload_num + SyncManager.cur_transfer_fail_num >= SyncManager.get_total_upload_num():
                 SyncManager.sync_finish_used_time = time.time() - SyncManager.start_sync_time
                 print('sync_complete_used_time===>' + str(SyncManager.sync_finish_used_time))
-
                 SyncManager.is_sync_finish = True
-                SyncManager.release()
                 break
 
 

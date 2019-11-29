@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1b46e9cf-45bf-4b4f-b4d3-b2d2d459f1b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/test_case_sync_upload_1k.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/test_case_sync_upload_1k.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/utils/excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/excel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/utils/file.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/file.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager/sync_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/sync_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +55,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../workspace/PycharmProjects/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RecentsManager">
@@ -92,6 +89,9 @@
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common/utils" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -149,6 +149,9 @@
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -189,10 +192,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.run" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.run" />
         <item itemvalue="Python.sync_manager" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.run" />
       </list>
     </recent_temporary>
   </component>
@@ -240,6 +243,7 @@
       <workItem from="1574908497891" duration="79000" />
       <workItem from="1574909443415" duration="982000" />
       <workItem from="1574912153623" duration="19781000" />
+      <workItem from="1574995779905" duration="5144000" />
     </task>
     <servers />
   </component>
@@ -251,7 +255,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

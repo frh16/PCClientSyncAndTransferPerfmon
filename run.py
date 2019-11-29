@@ -53,5 +53,4 @@ if __name__ == "__main__":
                                            detail_log_path=airtest_log_path)
     runner.run(suite)
     fp.close()
-
     sys.exit()
