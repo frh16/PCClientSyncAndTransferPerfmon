@@ -5,6 +5,8 @@ from pages.base_page import BasePage
 
 class Sync(BasePage):
 
+    window_class_name = 'CShowSyncWnd'
+
     @classmethod
     def click_sync_local_folder(cls):
         cls.touch('sync_btn_sync_local_folder.png')

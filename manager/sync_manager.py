@@ -16,15 +16,17 @@ from common.utils.ocr import *
 from common.utils.file import *
 from common.utils.opencv_opt import *
 from common.utils.excel import ExcelTool
+from common.utils.log import Logger
 from data.window_class_name import WinClassName
 from web.web_utils import WebUtils
 import threading
 import os
 import pythoncom
 
+
 class SyncManager():
 
-    cur_case_id = ''
+    cur_case_id = '0.1k'
     cur_sync_web_folder = '0.1k'
     cur_transfer_fail_num = 0
     cur_upload_num = 0
@@ -42,10 +44,17 @@ class SyncManager():
     thread_monitor = None
     thread_check_sync_end = None
 
+    my_log = None
+
     @staticmethod
     def set_case_id(case_id):
         SyncManager.cur_case_id = case_id
         SyncManager.cur_sync_web_folder = SyncManager.cur_case_id
+
+        log_dir = os.path.join(Config.get_log_dir(), str(SyncManager.cur_case_id))
+        mkdir(log_dir)
+        full_path = os.path.join(log_dir, 'debug.log')
+        SyncManager.my_log = Logger(full_path)
 
     @staticmethod
     def create_sync_local_to_cloud():
@@ -125,6 +134,8 @@ class SyncManager():
 
     @staticmethod
     def check_sync_start(timeout=10):
+        SyncManager.my_log.info('check_sync_start')
+
         start_time = time.time()
 
         while True:
@@ -137,6 +148,7 @@ class SyncManager():
                 SyncManager.sync_start_used_time = used_time
 
                 # start perfmon
+                SyncManager.my_log.info('start perfmon')
                 SyncManager.start_monitor()
                 SyncManager.start_check_sync_end()
                 break
@@ -148,6 +160,8 @@ class SyncManager():
 
     @staticmethod
     def monitor_and_record():
+
+        SyncManager.my_log.info('monitor_and_record')
 
         log_dir = os.path.join(Config.get_log_dir(), str(SyncManager.cur_case_id))
         mkdir(log_dir)
@@ -226,12 +240,18 @@ class SyncManager():
 
     @staticmethod
     def start_check_sync_end():
+
+        SyncManager.my_log.info('start_check_sync_end')
+
         SyncManager.cur_transfer_fail_num = 0
         SyncManager.cur_upload_num = 0
         SyncManager.is_sync_finish = False
 
-        SyncManager.refresh_web_select_folder()
+        webutils = WebUtils.getInstance()
+        webutils.connect()
 
+        SyncManager.refresh_web_select_folder()
+        SyncManager.my_log.info('start_check_sync_end222')
         SyncManager.thread_check_sync_end = threading.Thread(target=SyncManager.check_cur_upload_num)
         SyncManager.thread_check_sync_end.start()
 
@@ -239,12 +259,17 @@ class SyncManager():
     def refresh_web_select_folder():
         webutils = WebUtils.getInstance()
         webutils.refresh()
+        SyncManager.my_log.info('refresh_web_select_folder111')
         target_element_xpath = "//a[text()=" + "\'" + SyncManager.cur_sync_web_folder + "\'" + "]/../../../preceding-sibling::span"
         webutils.wait_element(['xpath', target_element_xpath], 60)
+        SyncManager.my_log.info('refresh_web_select_folder222')
         webutils.click(['xpath', target_element_xpath])
 
     @staticmethod
     def check_cur_upload_num():
+
+        SyncManager.my_log.info('check_cur_upload_num')
+
         webutils = WebUtils.getInstance()
 
         arrow_down_css = '.icon.i-arrow2'
@@ -274,6 +299,8 @@ class SyncManager():
                 print('exception in check_cur_upload_num: ', e)
                 SyncManager.refresh_web_select_folder()
 
+            SyncManager.my_log.info('check_cur_upload_num: ' + str(SyncManager.cur_upload_num))
+            SyncManager.my_log.info('cur_transfer_fail_num: ' + str(SyncManager.cur_transfer_fail_num))
 
             # >= because 'desktop.ini'
             if SyncManager.cur_upload_num + SyncManager.cur_transfer_fail_num >= SyncManager.get_total_upload_num():
@@ -293,6 +320,8 @@ class SyncManager():
             return 100000
         elif SyncManager.cur_sync_web_folder == '1m':
             return 1000000
+        elif SyncManager.cur_sync_web_folder == '0.1k':
+            return 100
         else:
             return -1
 
@@ -315,16 +344,24 @@ class SyncManager():
         Sync.click_btn_delete()
         Sync.click_btn_ok()
 
+        close_window_by_class_name(Sync.window_class_name)
+        close_window_by_class_name(SyncDetail.window_class_name)
+
         # delete web folder after upload finish
         SyncManager.delete_web_folder()
 
         webutils = WebUtils.getInstance()
         webutils.quit()
 
+        SyncManager.thread_monitor = None
+        SyncManager.thread_check_sync_end = None
+
 
 if __name__ == '__main__':
     auto_setup(__file__, devices=[
         "Windows:///",
     ])
+    SyncManager.set_case_id('0.1k')
     SyncManager.create_sync_local_to_cloud()
+
     # SyncManager.start_monitor()

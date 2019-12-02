@@ -3,14 +3,12 @@ from case.base_test_case import TestCaseBase # .之前没有case，单独运行�
 from pages.tray import Tray
 from manager.sync_manager import SyncManager
 
-class TestCaseUpload1k(TestCaseBase):
-    testCaseID = '1k'
+class TestCaseUpload100(TestCaseBase):
+    testCaseID = '0.1k'
 
     def test_run(self):
-        SyncManager.set_case_id(TestCaseUpload1k.testCaseID)
+        SyncManager.set_case_id(TestCaseUpload100.testCaseID)
         SyncManager.create_sync_local_to_cloud()
-
-
 
 
 

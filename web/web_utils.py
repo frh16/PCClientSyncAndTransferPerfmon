@@ -16,6 +16,9 @@ class WebUtils():
         return cls.__instance
 
     def __init__(self):
+        self.connect()
+
+    def connect(self):
         chrome_opt = Options()  # 创建参数设置对象.
         chrome_opt.debugger_address = '127.0.0.1:9222'
         driver = webdriver.Chrome(options=chrome_opt)

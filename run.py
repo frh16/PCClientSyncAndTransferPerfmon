@@ -8,6 +8,10 @@ import HTMLTestRunner
 from common.config import Config
 from common.utils.time import get_time
 
+from case.test_case_sync_upload_100 import TestCaseUpload100
+from case.test_case_sync_upload_1k import TestCaseUpload1k
+
+
 def get_report_file_name():
     return "result_" + Config.RUN_TIME + ".html"
 
@@ -22,14 +26,17 @@ if __name__ == "__main__":
 
     suite = unittest.TestSuite()
 
-    files = os.listdir(Config.CASE_FOLDER)
-    for file in files:
-        module_name = file.split('.')[0]
-        if(module_name.startswith('test')):
-            cur_module = importlib.import_module(module_name)
-            for name, obj in inspect.getmembers(cur_module):
-                if inspect.isclass(obj) and name == 'TestCase':
-                    suite.addTest(obj('test_run'))
+    suite.addTest(TestCaseUpload100('test_run'))
+    suite.addTest(TestCaseUpload1k('test_run'))
+
+    # files = os.listdir(Config.CASE_FOLDER)
+    # for file in files:
+    #     module_name = file.split('.')[0]
+    #     if(module_name.startswith('test')):
+    #         cur_module = importlib.import_module(module_name)
+    #         for name, obj in inspect.getmembers(cur_module):
+    #             if inspect.isclass(obj) and name == 'TestCase': # startwith
+    #                 suite.addTest(obj('test_run'))
 
     # discover = unittest.defaultTestLoader.discover(path, pattern='test*.py')
     # suite = unittest.TestSuite()
