@@ -1,4 +1,5 @@
 import os
+from common.utils.time import get_time
 
 
 project_name = 'PCClientSyncAndTransferPerfmon'
@@ -9,7 +10,7 @@ def get_root_dir():
     return rootPath
 
 class Config(object):
-    RUN_TIME = 0
+    RUN_TIME = get_time()
 
     CASE_FOLDER = 'case'
     LOG_FOLDER = 'log'
@@ -19,6 +20,8 @@ class Config(object):
 
     TEMP_FOLDER = 'temp'
     TEMP_PATH = os.path.join(get_root_dir(), TEMP_FOLDER)
+
+    DOWNLOAD_DIR = r'D:\_test_data_\download'
 
     @staticmethod
     def get_log_dir():

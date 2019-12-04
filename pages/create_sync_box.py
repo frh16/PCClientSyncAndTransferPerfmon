@@ -12,8 +12,24 @@ class CreateSyncBox(BasePage):
         cls.touch('box_folder_small_my_space.png', is_common_img=True)
 
     @classmethod
+    def double_click_folder_my_space(cls):
+        cls.double_click('box_folder_small_my_space.png', is_common_img=True)
+
+    @classmethod
     def click_advance_setting(cls):
         cls.touch('btn_advance_setting.png')
+
+    @classmethod
+    def double_click_folder_download(cls):
+        cls.double_click('folder_download_client.png', is_common_img=True)
+
+    @classmethod
+    def click_folder_100(cls):
+        cls.touch('folder_100_client.png', is_common_img=True)
+
+    @classmethod
+    def click_change_path(cls):
+        cls.touch('btn_change_path.png', is_common_img=True)
 
     # @classmethod
     # def click_btn_ok(cls):

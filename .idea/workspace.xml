@@ -2,62 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b46e9cf-45bf-4b4f-b4d3-b2d2d459f1b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/case/test_case_sync_upload_100.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/test_case_sync_download_100.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/test_case_sync_upload_100k.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/test_case_sync_upload_10k.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/test_case_sync_upload_1m.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/utils/os_tool.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/win/uia_tool.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/common/btn_change_path.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/common/btn_create_folder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/common/folder_100_client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/common/folder_download_client.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/common/folder_download_win.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/sync/sync_btn_create_sync.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/sync/sync_btn_sync_cloud_folder.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/base_test_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/base_test_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/test_case_sync_upload_100.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/test_case_sync_upload_100.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case/test_case_sync_upload_1k.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/test_case_sync_upload_1k.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997917056.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997917056_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997919730.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997919730_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997920326.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997920326_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997922328.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997922328_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997923234.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997923234_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997924129.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997924129_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997925026.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997925026_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997926132.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997926132_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997926683.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997926683_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997927646.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997927646_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997928571.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997928571_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997929513.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997929513_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997930501.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997930501_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997931388.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997931388_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997932276.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997932276_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997933162.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997933162_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997934004.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997934004_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997934905.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997934905_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997935761.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574997935761_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574998125364.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574998125364_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574998126234.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574998126234_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574998127105.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/1574998127105_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/fake.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/log.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/log.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/20191129112515/1k/monitor.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/result_20191129112515.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/utils/file.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/win/win_opt.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/win/win_opt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/common/folder_upload.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/common/folder_upload.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/common/this_computer_samll.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/common/this_computer_small.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager/sync_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/sync_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/create_sync_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/create_sync_box.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sync.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sync_setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sync_setting.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/web_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/web_utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +50,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/common/win/perfmon.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/pages/base_page.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/pages/sync.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/pages/create_sync_box.py" root0="SKIP_INSPECTION" />
@@ -91,7 +64,7 @@
     <setting file="file://$PROJECT_DIR$/common/utils/ocr.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/common/utils/opencv_opt.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/pages/login.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/common/utils/file.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/common/utils/os_tool.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/pages/main.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/case/test_case_sync_upload_100.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/pages/sync_detail.py" root0="SKIP_INSPECTION" />
@@ -105,26 +78,27 @@
     <setting file="file://$PROJECT_DIR$/pages/desktop.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/common/utils/log.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/common/utils/excel.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/case/test_case_sync_upload_10k.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="1SBQHfPGSJqplcS3E6y2m3PzJVM" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/case" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\work\GIT\PCClientSyncAndTransferPerfmon\case" />
-      <recent name="D:\work\workspace\PycharmProjects\PCClientSyncAndTransferPerfmon\img\common" />
-      <recent name="D:\work\workspace\PycharmProjects\PCClientSyncAndTransferPerfmon\web" />
-      <recent name="D:\work\workspace\PycharmProjects\PCClientSyncAndTransferPerfmon\img\sync_detail" />
-      <recent name="D:\work\workspace\PycharmProjects\PCClientSyncAndTransferPerfmon\img\sync" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\work\workspace\PycharmProjects\PCClientSyncAndTransferPerfmon\img\create_sync_box" />
       <recent name="D:\work\workspace\PycharmProjects\LDVirtualBoxAutoTest\common" />
       <recent name="D:\work\workspace\PycharmProjects\LDVirtualBoxAutoTest" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\GIT\PCClientSyncAndTransferPerfmon\img\common" />
+      <recent name="D:\work\GIT\PCClientSyncAndTransferPerfmon\img\sync" />
+      <recent name="D:\work\GIT\PCClientSyncAndTransferPerfmon\case" />
+      <recent name="D:\work\workspace\PycharmProjects\PCClientSyncAndTransferPerfmon\img\common" />
+      <recent name="D:\work\workspace\PycharmProjects\PCClientSyncAndTransferPerfmon\web" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -139,8 +113,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run">
-    <configuration name="log" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.sync_manager">
+    <configuration name="file" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -150,7 +124,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/utils/log.py" />
+      <option name="SCRIPT_NAME" value="D:\work\GIT\PCClientSyncAndTransferPerfmon\common\utils\os_tool.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,17 +133,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="os_tool" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common/utils" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/utils/os_tool.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -197,7 +171,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_case_sync_upload_1k" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="uia_tool" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -205,12 +179,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common/win" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/case/test_case_sync_upload_1k.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/win/uia_tool.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -223,9 +197,6 @@
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common/win" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -243,11 +214,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.run" />
+        <item itemvalue="Python.sync_manager" />
+        <item itemvalue="Python.sync_manager" />
+        <item itemvalue="Python.sync_manager" />
+        <item itemvalue="Python.sync_manager" />
+        <item itemvalue="Python.sync_manager" />
       </list>
     </recent_temporary>
   </component>
@@ -296,7 +267,9 @@
       <workItem from="1574909443415" duration="982000" />
       <workItem from="1574912153623" duration="19781000" />
       <workItem from="1574995779905" duration="5144000" />
-      <workItem from="1575267667318" duration="8247000" />
+      <workItem from="1575267667318" duration="16599000" />
+      <workItem from="1575342150677" duration="11452000" />
+      <workItem from="1575424539394" duration="8959000" />
     </task>
     <servers />
   </component>

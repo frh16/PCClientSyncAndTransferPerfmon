@@ -3,11 +3,11 @@ from case.base_test_case import TestCaseBase # .之前没有case，单独运行�
 from pages.tray import Tray
 from manager.sync_manager import SyncManager
 
-class TestCaseUpload1k(TestCaseBase):
-    testCaseID = '1k'
+class TestCaseUpload10k(TestCaseBase):
+    testCaseID = '10k'
 
     def test_run(self):
-        SyncManager.set_case(TestCaseUpload1k.testCaseID)
+        SyncManager.set_case(TestCaseUpload10k.testCaseID)
         SyncManager.create_sync_upload()
 
 

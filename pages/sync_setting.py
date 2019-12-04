@@ -11,6 +11,10 @@ class SyncSetting(BasePage):
     def click_btn_upload_sync(cls):
         cls.touch('sync_setting_btn_upload_sync.png')
 
+    @classmethod
+    def click_btn_download_sync(cls):
+        cls.touch('sync_setting_btn_download_sync.png')
+
     # @classmethod
     # def click_btn_ok(cls):
     #     cls.touch('btn_ok_gray.png', is_common_img=True)

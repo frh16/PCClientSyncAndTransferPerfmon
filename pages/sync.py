@@ -23,6 +23,14 @@ class Sync(BasePage):
     def click_btn_detail(cls):
         cls.touch('sync_btn_detail.png')
 
+    @classmethod
+    def click_btn_create_sync(cls):
+        cls.touch('sync_btn_create_sync.png')
+
+    @classmethod
+    def click_btn_sync_cloud_folder(cls):
+        cls.touch('sync_btn_sync_cloud_folder.png')
+
 
 if __name__ == '__main__':
     print('a')

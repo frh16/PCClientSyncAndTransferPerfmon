@@ -3,7 +3,6 @@ import sys
 import os
 from common.config import Config
 from common.win.win_opt import *
-
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
 
@@ -38,12 +37,21 @@ class BasePage():
         cls.touch(img, right_click, is_common_img)
 
     @classmethod
+    def double_click(cls, img, is_common_img=False):
+        double_click(Template(cls.get_img_path(img, is_common_img)))
+
+    @classmethod
+    def text(cls, input_text):
+        text(input_text)
+        cls.keyevent('{ENTER}')
+
+    @classmethod
     def keyevent(cls, keycode):
         keyevent(keycode)
 
     @classmethod
     def move_to(cls, x=0, y=0, align=ALIGN.NONE):
-        move_to(cls.window_class_name, x, y, align)
+        Win32Tool.move_to(class_name=cls.window_class_name, x=x, y=y, align=align)
 
     @classmethod
     def click_btn_ok(cls, color='gray'):

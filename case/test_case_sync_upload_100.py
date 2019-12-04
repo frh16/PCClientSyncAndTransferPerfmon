@@ -7,8 +7,8 @@ class TestCaseUpload100(TestCaseBase):
     testCaseID = '0.1k'
 
     def test_run(self):
-        SyncManager.set_case_id(TestCaseUpload100.testCaseID)
-        SyncManager.create_sync_local_to_cloud()
+        SyncManager.set_case(TestCaseUpload100.testCaseID)
+        SyncManager.create_sync_upload()
 
 
 
