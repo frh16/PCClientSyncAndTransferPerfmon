@@ -11,7 +11,7 @@ class SyncDetail(BasePage):
     transfer_info_width_when_not_start = -1
 
     TRANSFER_INFO_RECT = [25, 480, 500, 20]
-    TRANSFER_INFO_SCREEN_SHOT_NAME = 'screenshot_cut.bmp'
+    TRANSFER_INFO_SCREEN_SHOT_NAME = '.bmp'
 
     @classmethod
     def click_tag_synchronizing(cls):

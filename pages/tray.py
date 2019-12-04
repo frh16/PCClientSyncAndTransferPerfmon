@@ -14,7 +14,6 @@ class Tray(BasePage):
         cls.touch('tray_icon.png', right_click=right_click)
 
 
-
 if __name__ == '__main__':
 
     # print(Tray.get_img_path())

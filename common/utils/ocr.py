@@ -25,12 +25,19 @@ class OCRTool(object):
             return fp.read()
 
     def get_str_all(self, imgPath):
-        image = self.get_file_content(imgPath)
-        words_result_num = self.client.basicGeneral(image).get('words_result_num')
-        words_result = self.client.basicGeneral(image).get('words_result')
+        words = self.get_str_arr(imgPath)
         result = ''
+        for item in words:
+            result += item
+        return result
+
+    def get_str_arr(self, imgPath):
+        image = self.get_file_content(imgPath)
+        # words_result_num = self.client.basicGeneral(image).get('words_result_num')
+        words_result = self.client.basicGeneral(image).get('words_result')
+        result = []
         for item in words_result:
-            result += item['words']
+            result.append(item['words'])
         return result
 
     def is_match(self, str, imgPath):

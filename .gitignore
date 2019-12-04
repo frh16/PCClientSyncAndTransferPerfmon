@@ -1,5 +1,6 @@
 .idea
 __pycache__
 log
+temp
 *.py[cod]
 pages/__pycache__

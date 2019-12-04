@@ -46,20 +46,20 @@ if __name__ == "__main__":
     # runner = unittest.TextTestRunner()
     # runner.run(suite)
 
-    # runner = unittest.TextTestRunner()
-    # runner.run(suite)
+    runner = unittest.TextTestRunner()
+    runner.run(suite)
 
 
 
     # html报告文件路径
-    report_path = os.path.join(os.getcwd(), Config.LOG_FOLDER)
-    report_abspath = os.path.join(report_path, get_report_file_name())
-    airtest_log_path = Config.get_log_dir()
-    fp = open(report_abspath, "wb")
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,
-                                           title=u'自动化测试报告,测试结果如下：',
-                                           description=u'用例执行情况：',
-                                           detail_log_path=airtest_log_path)
-    runner.run(suite)
-    fp.close()
+    # report_path = os.path.join(os.getcwd(), Config.LOG_FOLDER)
+    # report_abspath = os.path.join(report_path, get_report_file_name())
+    # airtest_log_path = Config.get_log_dir()
+    # fp = open(report_abspath, "wb")
+    # runner = HTMLTestRunner.HTMLTestRunner(stream=fp,
+    #                                        title=u'自动化测试报告,测试结果如下：',
+    #                                        description=u'用例执行情况：',
+    #                                        detail_log_path=airtest_log_path)
+    # runner.run(suite)
+    # fp.close()
     sys.exit()

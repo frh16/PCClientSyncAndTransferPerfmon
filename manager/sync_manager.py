@@ -137,7 +137,7 @@ class SyncManager():
         cur_thread.join()
 
     @staticmethod
-    def check_sync_start(timeout=10):
+    def check_sync_start(timeout=30):
         SyncManager.my_log.info('check_sync_start')
 
         start_time = time.time()
@@ -225,20 +225,29 @@ class SyncManager():
     def check_sync_fail_num():
         SyncManager.record_transfer_fail_times += 1
 
-        file_path = os.path.join(Config.TEMP_PATH, SyncDetail.TRANSFER_INFO_SCREEN_SHOT_NAME)
+        from common.utils.time import get_time
+        file_name = get_time() + '.jpg'
+        file_path = os.path.join(Config.TEMP_PATH, file_name)
         screen_shot(SyncDetail.window_class_name, file_path, SyncDetail.TRANSFER_INFO_RECT)
         ocr_tool = OCRTool.getInstance()
-        str_ocr_result = ocr_tool.get_str_all(file_path)
+        words = ocr_tool.get_str_arr(file_path)
+        target_word = None
+        for word in words:
+            if '个传输错误' in word:
+                target_word = word
+                break
+        print('str_ocr_result===>', target_word)
 
-        import re
-        searchObj = re.search('\d+个传输错误', str_ocr_result)
-        if searchObj:
-            start = searchObj.start()
-            end = str_ocr_result.index('个传输错误')
-            SyncManager.cur_transfer_fail_num = int(str_ocr_result[start:end])
-            print('SyncManager.cur_transfer_fail_num==>' + str(SyncManager.cur_transfer_fail_num))
-            excel_tool = ExcelTool.getInstance()
-            excel_tool.write_line_in_sheet('传输错误', [SyncManager.cur_transfer_fail_num], SyncManager.record_transfer_fail_times)
+        if target_word:
+            import re
+            searchObj = re.search('\d+个传输错误', target_word)
+            if searchObj:
+                start = searchObj.start()
+                end = target_word.index('个传输错误')
+                SyncManager.cur_transfer_fail_num = int(target_word[start:end])
+                print('SyncManager.cur_transfer_fail_num==>' + str(SyncManager.cur_transfer_fail_num))
+                excel_tool = ExcelTool.getInstance()
+                excel_tool.write_line_in_sheet('传输错误', [SyncManager.cur_transfer_fail_num], SyncManager.record_transfer_fail_times)
 
         OSTool.del_file(file_path)
 
@@ -364,7 +373,7 @@ class SyncManager():
             webutils.quit()
         else:
             folder_name = SyncManager.get_download_local_folder_name()
-            Win32Tool.close_wnd(wnd_name=folder_name)
+            # Win32Tool.close_wnd(wnd_name=folder_name)
 
         SyncManager.thread_monitor = None
         SyncManager.thread_check_sync_end = None
@@ -426,6 +435,7 @@ class SyncManager():
 
         while True:
             download_num = UIATool.get_folder_file_num(folder_name)
+            print('download_num===>'+str(download_num))
             if download_num + SyncManager.cur_transfer_fail_num >= SyncManager.get_total_num():
                 SyncManager.sync_finish_used_time = time.time() - SyncManager.start_sync_time
                 print('sync_complete_used_time===>' + str(SyncManager.sync_finish_used_time))

@@ -2,34 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b46e9cf-45bf-4b4f-b4d3-b2d2d459f1b9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/case/test_case_sync_download_100.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case/test_case_sync_upload_100k.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case/test_case_sync_upload_10k.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case/test_case_sync_upload_1m.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/utils/os_tool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/win/uia_tool.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/common/btn_change_path.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/common/btn_create_folder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/common/folder_100_client.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/common/folder_download_client.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/common/folder_download_win.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/sync/sync_btn_create_sync.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/sync/sync_btn_sync_cloud_folder.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/base_test_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/base_test_case.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/test_case_sync_upload_100.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/test_case_sync_upload_100.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/test_case_sync_upload_1k.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/test_case_sync_upload_1k.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/utils/file.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/utils/ocr.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/ocr.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/win/win_opt.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/win/win_opt.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/common/folder_upload.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/common/folder_upload.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/common/this_computer_samll.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/common/this_computer_small.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager/sync_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/sync_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/create_sync_box.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/create_sync_box.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sync.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/sync_setting.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sync_setting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/sync_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sync_detail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/tray.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/tray.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -113,8 +92,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sync_manager">
-    <configuration name="file" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.run">
+    <configuration name="ocr" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -124,7 +103,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\work\GIT\PCClientSyncAndTransferPerfmon\common\utils\os_tool.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/utils/ocr.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -133,17 +112,17 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="os_tool" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common/utils" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/utils/os_tool.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -214,9 +193,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.sync_manager" />
-        <item itemvalue="Python.sync_manager" />
-        <item itemvalue="Python.sync_manager" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.run" />
         <item itemvalue="Python.sync_manager" />
         <item itemvalue="Python.sync_manager" />
       </list>
@@ -269,7 +248,7 @@
       <workItem from="1574995779905" duration="5144000" />
       <workItem from="1575267667318" duration="16599000" />
       <workItem from="1575342150677" duration="11452000" />
-      <workItem from="1575424539394" duration="8959000" />
+      <workItem from="1575424539394" duration="14405000" />
     </task>
     <servers />
   </component>
@@ -288,5 +267,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PCClientSyncAndTransferPerfmon$run.coverage" NAME="run Coverage Results" MODIFIED="1575444959760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

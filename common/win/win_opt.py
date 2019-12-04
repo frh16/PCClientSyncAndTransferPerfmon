@@ -26,7 +26,7 @@ class Win32Tool:
             window_width = right - left
             window_hight = bottom - top
             if (align & ALIGN.RIGHT) != 0:
-                x = SCREEN_WIDTH - window_width
+                x = Win32Tool.SCREEN_WIDTH - window_width
                 y = top
             if (align & ALIGN.LEFT) != 0:
                 x = 0
@@ -51,7 +51,7 @@ class Win32Tool:
             else:
                 cur_time = time.time()
                 if cur_time - start_time >= time_out:
-                    print('wait ' + class_name + ' time out!')
+                    print('wait wnd time out! ', class_name, wnd_name)
                     break
                 time.sleep(interval)
 
@@ -66,7 +66,7 @@ class Win32Tool:
             else:
                 cur_time = time.time()
                 if cur_time - start_time >= time_out:
-                    print('find ' + class_name + ' time out!')
+                    print('close wnd time out! ', class_name, wnd_name)
                     break
                 time.sleep(interval)
 
