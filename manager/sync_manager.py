@@ -1,7 +1,5 @@
 from airtest.core.api import *
 from data.priority import *
-from pages.desktop import Desktop
-from pages.login import Login
 from pages.main import Main
 from pages.sync import Sync
 from pages.sync_detail import SyncDetail
@@ -13,6 +11,7 @@ from common.win.win_opt import Win32Tool
 from common.win.screen import *
 from common.win.perfmon import *
 from common.win.uia_tool import UIATool
+from common.win.process import ProcessTool
 from common.config import Config
 from common.utils.ocr import *
 from common.utils.os_tool import OSTool
@@ -24,6 +23,7 @@ from web.web_utils import WebUtils
 import threading
 import os
 import pythoncom
+from manager.login_manager import LoginManager
 
 
 class SyncManager():
@@ -62,7 +62,7 @@ class SyncManager():
 
     @staticmethod
     def create_sync_upload():
-        SyncManager.login()
+        LoginManager.login()
         SyncManager.sync_local_folder()
 
         SyncManager.click_folder_by_case()
@@ -90,13 +90,6 @@ class SyncManager():
             SelectLocalFolderSyncToCloud.click_folder_1k()
         elif SyncManager.cur_sync_web_folder == '10k':
             SelectLocalFolderSyncToCloud.click_folder_1k()
-
-    @staticmethod
-    def login():
-        if Win32Tool.wnd_is_open(Main.window_class_name):
-            return
-        Desktop.open_soft()
-        Login.click_btn_login()
 
     @staticmethod
     def sync_local_folder():
@@ -218,6 +211,11 @@ class SyncManager():
         SyncManager.cur_upload_num = 0
         SyncManager.is_sync_finish = False
 
+        ProcessTool.start_taskmanager()
+        wnd_name = '任务管理器'
+        Win32Tool.wait_wnd_open(wnd_name=wnd_name)
+        Win32Tool.move_to(wnd_name=wnd_name, x=Win32Tool.SCREEN_WIDTH)
+
         SyncManager.thread_monitor = threading.Thread(target=SyncManager.monitor_and_record)
         SyncManager.thread_monitor.start()
 
@@ -236,7 +234,7 @@ class SyncManager():
             if '个传输错误' in word:
                 target_word = word
                 break
-        print('str_ocr_result===>', target_word)
+        print('ocr_target_word===>', target_word)
 
         if target_word:
             import re
@@ -368,12 +366,11 @@ class SyncManager():
         if SyncManager.is_upload:
             # delete web folder after upload finish
             SyncManager.delete_web_folder()
-
             webutils = WebUtils.getInstance()
             webutils.quit()
         else:
             folder_name = SyncManager.get_download_local_folder_name()
-            # Win32Tool.close_wnd(wnd_name=folder_name)
+            Win32Tool.close_wnd(wnd_name=folder_name)
 
         SyncManager.thread_monitor = None
         SyncManager.thread_check_sync_end = None
@@ -382,7 +379,7 @@ class SyncManager():
 
     @staticmethod
     def create_sync_download():
-        SyncManager.login()
+        LoginManager.login()
         SyncManager.sync_cloud_folder()
         SyncManager.click_folder_by_case()
         SyncManager.change_local_sync_path()
@@ -429,7 +426,7 @@ class SyncManager():
         folder_name = SyncManager.get_download_local_folder_name()
         # folder_name = '20191203135939_0.1k'
         target_dir = OSTool.join(Config.DOWNLOAD_DIR, folder_name)
-        OSTool.open_dir(target_dir)
+        Win32Tool.open_dir(target_dir)
         Win32Tool.wait_wnd_open(wnd_name=folder_name)
         Win32Tool.move_to(wnd_name=folder_name, x=Win32Tool.SCREEN_WIDTH)
 
@@ -441,6 +438,7 @@ class SyncManager():
                 print('sync_complete_used_time===>' + str(SyncManager.sync_finish_used_time))
                 SyncManager.is_sync_finish = True
                 break
+            time.sleep(1)
 
 
 
@@ -451,4 +449,4 @@ if __name__ == '__main__':
     # SyncManager.set_case_id('0.1k')
     # SyncManager.create_sync_local_to_cloud()
     # SyncManager.start_monitor()
-    SyncManager.start_check_download_sync_end()
+    # SyncManager.start_check_download_sync_end()

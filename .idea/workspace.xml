@@ -2,13 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1b46e9cf-45bf-4b4f-b4d3-b2d2d459f1b9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/test_case_sync_download_1k.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/win/process.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/common/btn_ok_gray_win.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/common/folder_100_main.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/common/folder_1k_main.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/common/folder_download_main.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/download/download_btn_browse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/download/download_btn_download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/main/main_btn_download.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/main/main_left_my_space.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/img/main/main_left_transfer_list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/login_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manager/transfer_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/download.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/utils/ocr.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/ocr.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/utils/os_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/os_tool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/win/perfmon.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/win/perfmon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/win/uia_tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/win/uia_tool.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/win/win_opt.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/win/win_opt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/manager/sync_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/manager/sync_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/sync_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/sync_detail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/tray.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/tray.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,7 +79,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img/common" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RecentsManager">
@@ -74,10 +90,10 @@
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\work\GIT\PCClientSyncAndTransferPerfmon\img\common" />
-      <recent name="D:\work\GIT\PCClientSyncAndTransferPerfmon\img\sync" />
+      <recent name="D:\work\GIT\PCClientSyncAndTransferPerfmon\img\download" />
+      <recent name="D:\work\GIT\PCClientSyncAndTransferPerfmon\img\main" />
       <recent name="D:\work\GIT\PCClientSyncAndTransferPerfmon\case" />
-      <recent name="D:\work\workspace\PycharmProjects\PCClientSyncAndTransferPerfmon\img\common" />
-      <recent name="D:\work\workspace\PycharmProjects\PCClientSyncAndTransferPerfmon\web" />
+      <recent name="D:\work\GIT\PCClientSyncAndTransferPerfmon\img\sync" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -92,37 +108,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run">
-    <configuration name="ocr" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.uia_tool">
+    <configuration name="select_local_folder_sync_to_cloud" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common/utils" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pages" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/utils/ocr.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PCClientSyncAndTransferPerfmon" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pages/select_local_folder_sync_to_cloud.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,6 +132,9 @@
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/manager" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -150,13 +150,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="transfer_manager" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PCClientSyncAndTransferPerfmon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/manager" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manager/transfer_manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="uia_tool" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common/win" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -176,6 +192,9 @@
       <module name="PCClientSyncAndTransferPerfmon" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/common/win" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -193,11 +212,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.run" />
-        <item itemvalue="Python.sync_manager" />
-        <item itemvalue="Python.sync_manager" />
+        <item itemvalue="Python.uia_tool" />
+        <item itemvalue="Python.uia_tool" />
+        <item itemvalue="Python.uia_tool" />
+        <item itemvalue="Python.uia_tool" />
+        <item itemvalue="Python.uia_tool" />
       </list>
     </recent_temporary>
   </component>
@@ -248,7 +267,9 @@
       <workItem from="1574995779905" duration="5144000" />
       <workItem from="1575267667318" duration="16599000" />
       <workItem from="1575342150677" duration="11452000" />
-      <workItem from="1575424539394" duration="14405000" />
+      <workItem from="1575424539394" duration="21255000" />
+      <workItem from="1575508781042" duration="695000" />
+      <workItem from="1575509540343" duration="14666000" />
     </task>
     <servers />
   </component>

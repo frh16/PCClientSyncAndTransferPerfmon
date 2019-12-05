@@ -1,7 +1,9 @@
 import win32gui
-from win32.lib import win32con
 import time
+import os
+from win32.lib import win32con
 from win32api import GetSystemMetrics
+
 
 class ALIGN:
     NONE = 0
@@ -70,8 +72,9 @@ class Win32Tool:
                     break
                 time.sleep(interval)
 
-
-
+    @staticmethod
+    def open_dir(directory):
+        os.system("start explorer " + directory)
 
 
 
@@ -80,5 +83,6 @@ class Win32Tool:
 if __name__ == '__main__':
     # move_to('CSyncDetailWnd', align=ALIGN.LEFT)
     # wait_wnd_open('CMainWndWeb_Private')
-    hwnd = win32gui.FindWindow(None, '20191203135939_0.1k')
-    print('----------'+str(hwnd))
+    # hwnd = win32gui.FindWindow(None, '20191203135939_0.1k')
+    print('----------')
+    # Win32Tool.start_taskmanager()

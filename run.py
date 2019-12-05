@@ -11,6 +11,7 @@ from common.utils.time import get_time
 from case.test_case_sync_upload_100 import TestCaseUpload100
 from case.test_case_sync_upload_1k import TestCaseUpload1k
 from case.test_case_sync_download_100 import TestCaseDownload100
+from case.test_case_sync_download_1k import TestCaseDownload1k
 
 
 
@@ -29,6 +30,7 @@ if __name__ == "__main__":
     suite = unittest.TestSuite()
 
     suite.addTest(TestCaseDownload100('test_run'))
+    # suite.addTest(TestCaseDownload1k('test_run'))
     # suite.addTest(TestCaseUpload1k('test_run'))
 
     # files = os.listdir(Config.CASE_FOLDER)

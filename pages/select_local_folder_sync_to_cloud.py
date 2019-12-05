@@ -17,6 +17,7 @@ class SelectLocalFolderSyncToCloud(BasePage):
     @classmethod
     def click_folder_test_data(cls):
         cls.touch('folder_test_data.png', is_common_img=True)
+        # cls.keyevent('{DOWN}')
 
     @classmethod
     def click_folder_upload(cls):

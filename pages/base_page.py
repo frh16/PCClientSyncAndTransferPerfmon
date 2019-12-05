@@ -5,6 +5,7 @@ from common.config import Config
 from common.win.win_opt import *
 from airtest.core.api import *
 from airtest.cli.parser import cli_setup
+from pywinauto import mouse
 
 class BasePage():
 
@@ -38,7 +39,8 @@ class BasePage():
 
     @classmethod
     def double_click(cls, img, is_common_img=False):
-        double_click(Template(cls.get_img_path(img, is_common_img)))
+        if img:
+            double_click(Template(cls.get_img_path(img, is_common_img)))
 
     @classmethod
     def text(cls, input_text):
@@ -59,6 +61,8 @@ class BasePage():
             cls.touch('btn_ok_gray.png', is_common_img=True)
         elif color == 'white':
             cls.touch('btn_ok_white.png', is_common_img=True)
+        elif color == 'gray_win':
+            cls.touch('btn_ok_gray_win.png', is_common_img=True)
 
     # @classmethod
     # def move_to_left(cls, class_name, x=0, y=0, align=ALIGN.LEFT):
